@@ -185,14 +185,19 @@ body {
   
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 /* spinner */
 .spinner {
-  border-top: 0.3rem solid green;    /* Blue */
+border: 0.3rem solid #49d678d8;        /* Light grey */ 
+  border-top: 0.3rem solid rgb(18, 18, 19);   /* Blue */
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
   animation: spin 1s linear infinite;
   display: none;                    /*hidden initially*/
-  margin: 12px auto;
+  margin: 12px auto; 
 }
 
