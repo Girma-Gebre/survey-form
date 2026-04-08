@@ -1,0 +1,21 @@
+{
+  "name": "simple-fullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Girma Gebre",
+  "license": "ISC",
+  "description": "Making simple fullstack web using mongoDB as DBMS",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.23.0",
+    "mongoose-sequence": "^6.0.1"
+  }
+}

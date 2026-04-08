@@ -1,0 +1,198 @@
+body {
+    background: linear-gradient(rgba(92, 162, 228, 0.5), rgba(14, 41, 163, 0.5)), url("./images/body-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    background-attachment: fixed;
+    /* to make the background not scrollable */
+}
+
+#title-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#title-section>h1 {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 0;
+    color: white;
+}
+
+#title-section>p {
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 8px;
+    margin-bottom: 35px;
+    font-style: italic;
+    color: white;
+}
+
+#survey-form {
+    background-color: rgb(18, 18, 19);
+    opacity: 0.8;
+    width: 600px;
+    margin: auto auto;
+    padding: 50px 50px;
+}
+
+/* coloring the label  */
+#name-label,
+#email-label,
+#age-label,
+#career-label,
+#radio-label,
+#checkbox-label,
+.ckeck-tool {
+    display: block;
+    color: hwb(0 80% 17%);
+}
+
+/* adjusting the label's font family and margin  */
+#name-label,
+#email-label,
+#age-label,
+#career-label,
+#radio-label,
+#checkbox-label {
+    margin-bottom: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* input element adjusting */
+#name,
+#email,
+#age {
+    margin-bottom: 25px;
+    height: 28px;
+    width: 94%;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 6px 12px;
+}
+
+#name:focus,
+#email:focus {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+/* adusting the color of the radio input element  */
+.definitly,
+.maybe,
+.never {
+    color: hwb(0 80% 17%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+}
+
+/* adusting the margin of the radio input element  */
+#definitly {
+    margin-bottom: 6px;
+}
+
+#maybe {
+    margin-bottom: 6px;
+}
+
+#never {
+    margin-bottom: 25px;
+}
+
+/* adusting the margin and font family of the checkbox input element  */
+.ckeck-tool {
+    margin-top: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* adusting the select option element */
+#employ {
+    margin-bottom: 25px;
+    height: 39px;
+    width: 98.5%;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 6px 12px;
+}
+
+#employ:focus {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+/* adusting comment label  */
+#comment-label {
+    display: block;
+    color: hwb(0 80% 17%);
+    margin-top: 25px;
+    margin-bottom: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* adusting comment elelement */
+#comment {
+    font-size: 17px;
+    width: 95%;
+    height: 150px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     border-radius: 6px;
+    resize: vertical;
+    /*to make the text area drag vertically only*/
+}
+
+#comment:focus {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+#submit {
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    border-color: rgb(198, 210, 223);
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#submit:hover {
+    transition-duration: 0.4s;
+    background-color: rgb(4, 4, 182);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+/* making responsive web  */
+@media only screen and (min-width: 601px) and (max-width: 700px) {
+    #survey-form {
+        width: 530px;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    #survey-form {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+ 
+    #survey-form {
+        width: 80vw;
+        padding: 20px 20px 20px 20px;
+    }
+  
+}
+
+/* spinner */
+.spinner {
+  border-top: 0.3rem solid green;    /* Blue */
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 1s linear infinite;
+  display: none;                    /*hidden initially*/
+  margin: 12px auto;
+}
+
