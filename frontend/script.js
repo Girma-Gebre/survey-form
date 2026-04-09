@@ -1,10 +1,14 @@
 // diplaying the result message and sinner element
 const dataCheck = document.getElementById("dataCheck");
 const spinner = document.getElementById("spinner");
+const dataCheckName = document.getElementById("dataCheckName")
+const dataCheckEmail = document.getElementById("dataCheckEmail")
 // Contact form handler (demo)
 document.getElementById("survey-form").addEventListener("submit", async function(e){
   e.preventDefault(); //event handler to stop the browser’s default action for that event.
   dataCheck.style.display = "none" // changing one style 
+  dataCheckName.style.display = "none" // changing one style 
+  dataCheckEmail.style.display = "none" // changing one style 
   spinner.style.display = "block" // show spinner
 
   // getting the value of input element from client side 
@@ -40,7 +44,7 @@ document.getElementById("survey-form").addEventListener("submit", async function
           fontSize: "16px",
           borderRadius: "4px"
        });
-       
+       errMsgWeb.focus(); // to focus the error message element for better user exprience 
     return;
   }
   errMsgWeb.style.display = "none";
@@ -58,15 +62,15 @@ document.getElementById("survey-form").addEventListener("submit", async function
           fontSize: "16px",
           borderRadius: "4px"
        });
-       
+       errMsgTools.focus(); // to focus the error message element for better user exprience 
     return;
   }
   // to remove the error message if the client select at least one tools
   errMsgTools.style.display = "none";
     // collecting data from html input element
     const sendData = { name, email, age, employ, likeWeb, tools, comment }; // using ES6 shorthand object syntax.
-    // const url = "http://localhost:2000/surveyForm"; // this url is for local database managment 
-    const url = "https://survey-form-backend-web.onrender.com/surveyform"; 
+    const url = "http://localhost:2000/surveyForm"; // this url is for local database managment 
+    // const url = "https://survey-form-backend-web.onrender.com/surveyform"; 
     //this url is for cloud database managment in mongodb atlas and render server. note: the  url must be in lowercase letter 
     const endpointObject = {
       method: "POST", 
@@ -103,8 +107,84 @@ document.getElementById("survey-form").addEventListener("submit", async function
        dataCheck.textContent = data.Msg;
         
     } else {
-      Object.assign(dataCheck.style, {
-         backgroundColor: "rgb(235, 61, 61)",
+      const nameEmailDublicate = "Your name and email are already exist!"
+      const nameDublicate = "Your name is already exists!"
+      const emailDublicate = "Your email is already exists!"
+      if (nameEmailDublicate === data.Msg) {
+        // when both the name and email is already exsit on the database in the mongoDB atlas
+        Object.assign(dataCheckName.style, {
+        backgroundColor: "rgb(230, 171, 171)",
+         marginTop: "-12px",
+         marginBottom: "12px",
+         padding: "4px 0 4px 12px",
+         textAlign: "center",
+         color: "rgb(255, 0, 0)",
+         fontFamily:"sans-serif",
+         fontWeight: "bold",
+         fontSize: "16px",
+         borderRadius: "4px",
+         display: "block",
+         width: "96%"
+       });
+       dataCheckName.textContent = "Your name is already exists!"
+       dataCheckName.focus()
+
+       Object.assign(dataCheckEmail.style, {
+        backgroundColor: "rgb(230, 171, 171)",
+         marginTop: "-12px",
+         marginBottom: "2px",
+         padding: "4px 0 4px 12px",
+         textAlign: "center",
+         color: "rgb(255, 0, 0)",
+         fontFamily:"sans-serif",
+         fontWeight: "bold",
+         fontSize: "16px",
+         borderRadius: "4px",
+         display: "block",
+         width: "96%"
+       });
+       dataCheckEmail.textContent = "Your email is already exists!"
+       dataCheckEmail.focus();
+      } else if(nameDublicate === data.Msg){
+        // when the name only is already exist on the database in the mongoDB atlas
+         Object.assign(dataCheckName.style, {
+         backgroundColor: "rgb(230, 171, 171)",
+         marginTop: "-6px",
+         marginBottom: "12px",
+         padding: "4px 0 4px 12px",
+         textAlign: "center",
+         color: "rgb(255, 0, 0)",
+         fontFamily:"sans-serif",
+         fontWeight: "bold",
+         fontSize: "16px",
+         borderRadius: "4px",
+         display: "block",
+         width: "96%"
+       });
+       dataCheckName.textContent = data.Msg;
+       dataCheckName.focus()
+      } else if (emailDublicate === data.Msg){
+        // when the email only is already exist on the database in the mongoDB atlas
+        Object.assign(dataCheckEmail.style, {
+         backgroundColor: "rgb(230, 171, 171)",
+         marginTop: "-12px",
+         marginBottom: "2px",
+         padding: "4px 0 4px 12px",
+         textAlign: "center",
+         color: "rgb(255, 0, 0)",
+         fontFamily:"sans-serif",
+         fontWeight: "bold",
+         fontSize: "16px",
+         borderRadius: "4px",
+         display: "block",
+         width: "96%"
+       });
+       dataCheckEmail.textContent = data.Msg;
+       dataCheckEmail.focus();
+
+      } else {
+     Object.assign(dataCheck.style, {
+        backgroundColor: "rgb(230, 171, 171)",
          marginTop: "12px",
          padding: "4px 0 4px 12px",
          textAlign: "center",
@@ -116,6 +196,8 @@ document.getElementById("survey-form").addEventListener("submit", async function
          display: "block"
        });
       dataCheck.textContent = data.Msg; 
+      }
+      
     }
 
   }catch(err){

@@ -21,9 +21,11 @@
       <!-- Name  -->
       <label for="name" id="name-label">Name</label>
       <input type="text" id="name" required placeholder="Enter your name"  required/>
+      <div id="dataCheckName" tabindex="0"></div> <!--"tabindex="0"" make the element focusable  -->
       <!-- Email  -->
       <label for="email" id="email-label">Email </label>
       <input id="email" type="email" required placeholder="Enter your Email"  required/>
+      <div id="dataCheckEmail" tabindex="0"></div> <!--"tabindex="0"" make the element focusable  -->
       <!-- Age -->
       <label for="number" id="number-label">Age(optional)</label>
       <input id="age" name="age" type="number" required min="10" max="65" Placeholder="Age"  required/>
@@ -40,8 +42,8 @@
       </label> <!-- to be reqired to select one of them (radio input) put the required attribute in one of the radio input. -->
       <label for="maybe" class="maybe"><input value="maybe" type="radio" name="likeWeb" id="maybe" /> Maybe </label>
       <label for="never" class="never"><input value="never" type="radio" name="likeWeb" id="never" /> Never </label>
-      <div id="errMsgWeb"></div>
-      <!-- checkbox for selecting web Development tools -->
+      <div id="errMsgWeb" tabindex="0"></div> <!--"tabindex="0"" make the element focusable  -->    
+       <!-- checkbox for selecting web Development tools -->
       <label id="checkbox-label">Mark your desire tool/s from the following to learn? </label>
       <label class="ckeck-tool" for="chk1" class="chk1"><input value="HTML" id="chk1" type="checkbox" name="tools" />HTML</label>
       <label class="ckeck-tool" for="chk2"><input value="CSS" id="chk2" type="checkbox" name="tools" />CSS</label>
@@ -58,7 +60,7 @@
       <label class="ckeck-tool" for="chk13" class="chk13"><input value="MySQL" type="checkbox" id="chk13" name="tools" />MySQL</label>
       <label class="ckeck-tool" for="chk14" class="chk14"><input value="Git" type="checkbox" id="chk14" name="tools" />Git</label>
       <label class="ckeck-tool" for="chk15" class="chk15"><input value="GitHub" type="checkbox" id="chk15" name="tools" />GitHub</label>
-          <div id="toolsNotselected"></div>
+          <div id="toolsNotselected" tabindex="0"></div> <!--"tabindex="0"" make the element focusable  -->
       <!-- textarea for further message -->
       <label for="textarea" id="textarea-label">Any comments or suggestions? </label>
       <textarea id="comment" name="comment" placeholder="Enter your comment here..." required></textarea>
