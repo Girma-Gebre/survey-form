@@ -3,7 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const postRouter = require('./crude operation/router-post');
 const path = require('path');
-const APP = express();  
+const APP = express(); 
  
 const port = 2000
 APP.use(cors())

@@ -37,7 +37,7 @@ const count = await survey.countDocuments(); // this shows the value of seq in c
   }
 } 
 
-router.post("/surveyForm", async (req,res)=>{
+router.post("/surveyform", async (req,res)=>{
     try{
     const nameNoExtraSpace = req.body.name.trim().replace(/\s+/g, " "); //avoiding extra space from name from client/frontend  
     const {email, age, employ, likeWeb, tools, comment} = req.body;

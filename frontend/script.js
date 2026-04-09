@@ -66,8 +66,8 @@ document.getElementById("survey-form").addEventListener("submit", async function
     // collecting data from html input element
     const sendData = { name, email, age, employ, likeWeb, tools, comment }; // using ES6 shorthand object syntax.
     // const url = "http://localhost:2000/surveyForm"; // this url is for local database managment 
-    const url = "https://survey-form-rrq0.onrender.com/surveyForm"; 
-    //this url is for cloud database managment in mongodb atlas and render server
+    const url = "https://survey-form-rrq0.onrender.com/surveyform"; 
+    //this url is for cloud database managment in mongodb atlas and render server. note: the  url must be in lowercase letter 
     const endpointObject = {
       method: "POST", 
       headers: {"Content-Type": "application/json"}, 
